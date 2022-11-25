@@ -1,7 +1,6 @@
 <?php
 $word = $_GET['word'];
 $paragraph = $_GET['paragraph'];
-$lungezza = strlen($paragraph);
 
 ?>
 <!DOCTYPE html>
@@ -16,8 +15,9 @@ $lungezza = strlen($paragraph);
 <body>
     <div class="container my-5">
         <p><?php echo $paragraph; ?></p>
-        <p>Questo paragrafo è lungo <?php echo $lungezza?></p>
+        <p>Questo paragrafo è lungo <?php echo strlen($paragraph)?></p>
         <p><?php echo str_ireplace($word, '***', $paragraph) ?></p>
+        <p>La lunguezza del secondo paragrafo è di <?php echo strlen(str_ireplace($word, '***', $paragraph)) ?></p>
     </div>
 </body>
 </html>
